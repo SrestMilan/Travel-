@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 function Form({ onAddItems }) {
+  // working on state
   const [quantity, setQuantity] = useState(1);
   const [description, setDescription] = useState(null);
 
@@ -12,6 +13,7 @@ function Form({ onAddItems }) {
     setDescription("");
     setQuantity(1);
 
+    // storing data input from form
     const newItem = {
       description,
       quantity,
@@ -19,6 +21,7 @@ function Form({ onAddItems }) {
       id: Date.now(),
     };
 
+    // passing data into props
     onAddItems(newItem);
 
     console.log(newItem);
