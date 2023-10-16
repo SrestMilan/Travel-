@@ -29,6 +29,11 @@ export default function App() {
     );
   }
 
+  function handleClearList() {
+    const confirmed = window.confirm("Are you sure to delete the item?");
+    if (confirmed) setItems([]);
+  }
+
   return (
     // passing props into component
     <div className="app">
@@ -38,6 +43,7 @@ export default function App() {
         items={items}
         onDeleteItem={handleDeleteItem}
         onHandleToggleItem={handleToggleItems}
+        onHandleListItem={handleClearList}
       />
       <Stats items={items} />
     </div>
